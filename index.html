@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones jQuery</title>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('#addClass').click(function(){
+                $('.paddclass').addClass('red');
+            });
+            $('.slidetoggle').click(function(){
+                $('img').slideToggle('slow');
+            });
+            $('img').click(function(){
+                $('img').hide();
+            });
+            $('.psilde').click(function(){
+                $('img').show();
+            });
+            $('.append').click(function(){
+                $('.pappend').append('<p>Nuevo parrafo</p>');
+            });
+            $('.t1').click(function(){
+                $('#addClass').toggle();
+            });
+            $('.t3').hover(function(){
+                $('.append').slideDown('slow');
+            }, function(){
+                $('.append').slideUp('slow');
+            });
+            $('#addClass').hover(function(){
+                $(this).fadeOut('slow');
+            }, function(){
+                $(this).fadeIn('slow');
+            });
+            $('hr').before('<hr>');
+            $('hr').after('<br>');
+            $('h2').html('Introduciendo <i>HTML</i>');
+            $('h3').text('Introduciendo <i>Texto</i>');
+            var input = $('h3').text();
+            $('input').val(input);
+            var atributio = $('input').attr('type');
+            console.log(atributio);
+
+        })
+    </script>
+    <style type="text/css">
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button style="display: inline;" id="addClass">AddClass</button>
+    <h1 style="display: inline;" class="t1">AddClass</h1>
+    <p class="paddclass">Click the buttom to add class 'red' to this paragraph</p>
+    <hr>
+    <button style="display: inline;" class="slidetoggle">SlideToggle</button>
+    <h1 style="display: inline;">Slidetoggle</h1>
+    <p class="psilde">Click the button to slidetoggle o hidden image</p>
+    <img src="ninja.jpeg" alt="ninja.jpeg">
+    <hr>
+    <button style="display: inline;" class="append">Append</button>
+    <h1 style="display: inline;" class="t3">Append</h1>
+    <p class="pappend">Click the buttom to append a new paragraph</p>
+    <h2></h2>
+    <h3></h3>
+    <input type="text" value="Hola" >
+    <p></p>
+  
+</body>
+</html>
